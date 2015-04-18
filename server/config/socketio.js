@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/mastercard/mastercard.socket').register(socket);
   require('../api/stock/stock.socket').register(socket);
   require('../api/selection/selection.socket').register(socket);
   require('../api/game/game.socket').register(socket);
