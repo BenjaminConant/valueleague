@@ -8,18 +8,19 @@
 }
 
 #banner h1 {
-    font-size: 60px;
+    font-size: 90px;
     line-height: 1;
     letter-spacing: -1px;
 }
 
 .hero-unit {
     position: relative;
-    padding: 100px;
+    padding: 150px;
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     background: #2A303D;
+
 }
 
 .footer {
@@ -45,6 +46,56 @@
 #navBar {
     li a:hover {
     color: white;
+    }
+}
+
+.headIcon {
+    font-size: 6em;
+    margin: 20px;
+}
+
+.lead {
+    padding: 20px;
+}
+
+.row{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;  
+}
+
+.title {
+    color: #00ffbc;
+    
+}
+
+#trophy{
+    margin-top: 36px;
+    font-size: 6em;
+}
+.first{
+    text-align: center;
+    color: #2A303D;
+    background: #e8e8e8;
+    clear: both;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    .threeOptions {
+        font-size: 3em;
+    }
+}
+
+.steps{
+    background: #2A303D;
+    padding: 50px;
+    clear: both;
+    h1 { color: #00ffbc; }
+    h3{
+    color: #e8e8e8;
     }
 }
 
