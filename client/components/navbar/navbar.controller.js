@@ -2,6 +2,7 @@
 
 angular.module('valueleagueApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
+
     $scope.menu = [
      {'title': 'Home', 'link': '/'},
      {'title': 'Games', 'link': '/allGames'},
