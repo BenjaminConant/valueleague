@@ -6,7 +6,11 @@ var mongoose = require('mongoose'),
 var GameSchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: Boolean, 
+  date: String, 
+  stocks: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
+  winner: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
+  complete: Boolean 
 });
 
 module.exports = mongoose.model('Game', GameSchema);
