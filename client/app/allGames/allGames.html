@@ -1,9 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
 	<h1> Demo Game </h1>
-	<game-thumbnail></game-thumbnail>
+	<game-thumbnail ng-repeat="game in demoGame"></game-thumbnail>
 
 
 	<h1> Upcoming Games</h1>
-	<game-thumbnail></game-thumbnail>
+	<game-thumbnail ng-repeat="game in games" ></game-thumbnail>
 </div>
