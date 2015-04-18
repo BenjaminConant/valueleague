@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var StockSchema = new Schema({
   ticker: String,
   name: String,
-  prices: Object,
+  prices: Array,
   game: {type: Schema.Types.ObjectId, ref: 'Game'},
   startPrice: Number,
   currentPrice: Number,
