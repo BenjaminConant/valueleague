@@ -15,7 +15,7 @@ angular.module('valueleagueApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/allGames');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

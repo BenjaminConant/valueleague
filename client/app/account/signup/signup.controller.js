@@ -16,7 +16,7 @@ angular.module('valueleagueApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/allGames');
         })
         .catch( function(err) {
           err = err.data;
