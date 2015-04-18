@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Game = require('./game.model');
+var Stock = require('../stock/stock.model')
 
 // Get list of games
 exports.index = function(req, res) {
@@ -13,11 +14,38 @@ exports.index = function(req, res) {
 
 // Get a single game
 exports.show = function(req, res) {
-  Game.findById(req.params.id, function (err, game) {
-    if(err) { return handleError(res, err); }
-    if(!game) { return res.send(404); }
-    return res.json(game);
-  });
+  Game.findById(req.params.id)
+  .populate('stocks')
+  .exec(function(err, game){
+    if (game) {
+
+      console.log(game);
+      if (game.name === "demoGame") {
+        if (game.stocks.length > 0) {
+          console.log("we got to inside the wrong thing");
+          res.json(200, game);
+        } else {
+          console.log("we got to inside the right thing");
+          Stock.find(function(err, stocks){
+            game.stocks = stocks;
+            game.save(function(err, game) {
+              Game.findById(game.id)
+              .populate('stocks')
+              .exec(function(err, game){
+                res.json(200, game);
+              })
+            })
+          })
+        }
+      } else {
+        //
+        res.json(200, game)
+      }
+
+    } else {
+      res.json(200, "no game");
+    }
+  }) 
 };
 
 // Creates a new game in the DB.

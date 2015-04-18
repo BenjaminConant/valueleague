@@ -6,15 +6,8 @@ angular.module('valueleagueApp')
     $scope.demoGame = [];
     $scope.games =[];
 
-	// game.getDemo().success(function(demoGame){
-	// 	$scope.demoGame.push(demoGame);
-	// }).error(function(err){
-	// 	console.log(err);
-	// })
-
-
 	game.getAll().success(function(games){
-		console.log(games);
+		
 		games.forEach(function(game) {
 			if (game.name === "demoGame") {
 				$scope.demoGame.push(game)
