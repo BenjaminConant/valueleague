@@ -7,6 +7,146 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Game = require('../api/game/game.model');
+var Selection = require('../api/selection/selection.model');
+var Stock = require('../api/stock/stock.model');
+var Promise = require('bluebird');
+var request = Promise.promisify(require('request'));
+var stocks = require('./stocks.js');
+
+
+Stock.find({}).remove(function() {
+
+
+var api_token = '6E10075F14A6447E94C8700F8CF7116A';
+
+var RequestObj = function (token,ticker) {
+    this.host ='http://globalquotes.xignite.com',
+    this.type ='/v3/xGlobalQuotes.json/GetBars?',
+    this.token = '_token=' + token,
+    this.identifier = '&IdentifierType=Symbol',
+    this.ticker = '&Identifier=' + ticker,
+    this.starttime = '&StartTime=' + '4/17/2015 9:30 AM',
+    this.endtime = '&EndTime=4/17/2015 4:00 PM',
+    this.precision = '&Precision=Minutes',
+    this.periods = '&Period=' + '30',
+    this.fields = '&_Fields=Security.Symbol,Security.Name,Bars.Open,Bars.Close,Bars.StartTime,Bars.EndTime,Bars.StartDate'
+}
+
+RequestObj.prototype.combine = function () {
+    var req = ''
+    for (var k in this) { if (k != 'combine') req += this[k]; }
+    return req
+}
+
+
+
+
+
+var getStockPrices = function() {
+  var tickers = stocks;
+  var promises = tickers.map(function(ticker){
+    var reqObj = new RequestObj(api_token, ticker);
+    return request(reqObj.combine());
+  })
+
+  return Promise.settle(promises).then(function(stockData){
+   
+    stockData.forEach(function(stock) {
+      // console.log("createing stock", stock);
+      var stockBody = JSON.parse(stock._settledValue[1]);
+
+
+      console.log("createing stock", stockBody);
+
+      Stock.create({
+         ticker: stockBody.Security.Symbol,
+         name: stockBody.Security.Name,
+         prices: stockBody.Bars,
+         startPrice: stockBody.Bars[0].Open,
+         endPrice: stockBody.Bars[stockBody.Bars.length - 1].Close
+      })
+
+    });
+
+
+  })
+
+}
+
+// var StockSchema = new Schema({
+//   ticker: String,
+//   name: String,
+//   prices: Object,
+//   game: {type: Schema.Types.ObjectId, ref: 'Game'},
+//   startPrice: Number,
+//   currentPrice: Number,
+//   endPrice: Number
+// });
+
+
+
+getStockPrices();
+
+});
+
+// var GameSchema = new Schema({
+//   name: String,
+//   info: String,
+//   active: Boolean, 
+//   date: String, 
+//   stocks: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
+//   winner: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
+//   complete: Boolean 
+// });
+
+
+var demoGame = new Game ({
+  name: "demoGame", 
+  date: "April 17th 2015",
+  complete: false
+});
+
+var gameNextWeek1 = new Game ({
+  date: "April 20th 2015", 
+  complete: false
+})
+
+var gameNextWeek2 = new Game ({
+  date: "April 21th 2015", 
+  complete: false
+})
+
+
+var gameNextWeek3 = new Game ({
+  date: "April 22th 2015", 
+  complete: false
+})
+
+
+var gameNextWeek4 = new Game ({
+  date: "April 23th 2015", 
+  complete: false
+})
+
+
+
+var gameNextWeek5 = new Game ({
+  date: "April 24th 2015", 
+  complete: false
+})
+
+
+
+Game.find({}).remove(function(){
+  demoGame.save();
+  gameNextWeek1.save();
+  gameNextWeek2.save();
+  gameNextWeek3.save();
+  gameNextWeek4.save();
+  gameNextWeek5.save();
+})
+
 
 Thing.find({}).remove(function() {
   Thing.create({
