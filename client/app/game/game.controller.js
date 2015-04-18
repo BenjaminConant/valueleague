@@ -10,6 +10,9 @@ angular.module('valueleagueApp')
    	game.findById($stateParams.id).success(function(game){
    		console.log(game);
    		$scope.game = game;
+      $scope.game.stocks.forEach(function(stock) {
+            stock.percentReturn = stock.ticker;
+      });
    		console.log("the stocks", $scope.game.stocks);
 
 
@@ -21,6 +24,12 @@ angular.module('valueleagueApp')
    			
 	  	$interval(function(){
 	  			$scope.counter++
+          $scope.game.stocks.forEach(function(stock) {
+            stock.percentReturn = (stock.prices[$scope.counter].Open - stock.startPrice) / stock.startPrice;
+            console.log(stock);
+          });
+
+    
 
 	  	}, 1000, $scope.game.stocks[0].prices.length - 1);
 
