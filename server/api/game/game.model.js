@@ -11,6 +11,6 @@ var GameSchema = new Schema({
   stocks: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
   winner: [{type: Schema.Types.ObjectId, ref: 'Stock'}],
   complete: Boolean 
-});
+},{strict: false});
 
 module.exports = mongoose.model('Game', GameSchema);

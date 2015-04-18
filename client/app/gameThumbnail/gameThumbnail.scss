@@ -1,5 +1,23 @@
+game-thumbnail{
+    padding: 40px;
+    margin: 40px;
+}
+
 .game-thumbnail-container{
-	border: 1px solid black;
+	border: 1px solid #e8e8e8;
 	width: 70%;
 	margin: 0 auto;
+	padding: 40px;
+	background: #323948;
+	color: #e8e8e8;
+}
+
+.game{
+	text-align: center;
+	padding: 40px;
+}
+
+button {
+	margin-top: 8%;
+	background-color:#e8e8e8;
 }

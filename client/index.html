@@ -16,11 +16,11 @@
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="app/app.css">
-    <link rel="stylesheet" href="app/font-awesome.css">
+    <link rel="stylesheet" href="app/app.css">    
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/animate2.css">
       <link rel="stylesheet" href="app/font-awesome.css">
-
       <!-- endinjector -->
     <!-- endbuild -->
     <link rel="stylesheet" href="assets/semantic.min.css">
@@ -53,6 +53,10 @@
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/wow/dist/wow.min.js"></script>
+      <script>
+       new WOW().init();
+      </script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -80,6 +84,8 @@
           <script src="app/allGames/allGames.js"></script>
           <script src="app/game/game.controller.js"></script>
           <script src="app/game/game.js"></script>
+          <script src="app/game/game.service.js"></script>
+          <script src="app/gameStockThumbnail/gameStockThumbnail.directive.js"></script>
           <script src="app/gameThumbnail/gameThumbnail.directive.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
@@ -89,6 +95,7 @@
           <script src="app/myBalance/myBalance.js"></script>
           <script src="app/myGames/myGames.controller.js"></script>
           <script src="app/myGames/myGames.js"></script>
+          <script src="app/percentFilter/percentFilter.filter.js"></script>
           <script src="app/playerThumbnail/playerThumbnail.directive.js"></script>
           <script src="app/standings/standings.controller.js"></script>
           <script src="app/standings/standings.js"></script>
