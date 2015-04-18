@@ -1,0 +1,101 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'sass' ]
+2 info using npm@2.3.0
+3 info using node@v0.10.36
+4 warn package.json karma-firefox-launcher@0.1.4 No README data
+5 warn package.json karma-coffee-preprocessor@0.2.1 No README data
+6 warn package.json passport-local@0.1.6 No README data
+7 silly cache add args [ 'sass', null ]
+8 verbose cache add spec sass
+9 silly cache add parsed spec { raw: 'sass',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'sass',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 verbose addNamed sass@*
+11 silly addNamed semver.valid null
+12 silly addNamed semver.validRange *
+13 silly addNameRange { name: 'sass', range: '*', hasData: false }
+14 silly mapToRegistry name sass
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/sass
+18 verbose addNameRange registry:https://registry.npmjs.org/sass not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/sass
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 12:06:59
+22 verbose request id 230cfa926f7a4b4c
+23 verbose etag "3N8DFV8RQ52OLAEUJ1HZ2J1OR"
+24 http request GET https://registry.npmjs.org/sass
+25 http 304 https://registry.npmjs.org/sass
+26 silly get cb [ 304,
+26 silly get   { date: 'Sat, 18 Apr 2015 16:07:00 GMT',
+26 silly get     server: 'Apache',
+26 silly get     via: '1.1 varnish',
+26 silly get     'last-modified': 'Sat, 18 Apr 2015 16:07:00 GMT',
+26 silly get     'cache-control': 'max-age=60',
+26 silly get     etag: '"3N8DFV8RQ52OLAEUJ1HZ2J1OR"',
+26 silly get     age: '26',
+26 silly get     'x-served-by': 'cache-atl6233-ATL',
+26 silly get     'x-cache': 'HIT',
+26 silly get     'x-cache-hits': '1',
+26 silly get     'x-timer': 'S1429373220.398741,VS0,VE0',
+26 silly get     vary: 'Accept',
+26 silly get     'content-length': '0',
+26 silly get     'keep-alive': 'timeout=10, max=50',
+26 silly get     connection: 'Keep-Alive' } ]
+27 verbose etag https://registry.npmjs.org/sass from cache
+28 silly addNameRange number 2 { name: 'sass', range: '*', hasData: true }
+29 silly addNameRange versions [ 'sass', [ '0.4.0', '0.4.1', '0.4.2', '0.4.3', '0.5.0' ] ]
+30 verbose addNamed sass@0.5.0
+31 silly addNamed semver.valid 0.5.0
+32 silly addNamed semver.validRange 0.5.0
+33 silly cache afterAdd sass@0.5.0
+34 verbose afterAdd /Users/katrinaliao/.npm/sass/0.5.0/package/package.json not in flight; writing
+35 verbose afterAdd /Users/katrinaliao/.npm/sass/0.5.0/package/package.json written
+36 silly install resolved [ { name: 'sass',
+36 silly install resolved     description: 'Syntactically Awesome Stylesheets (compiles to css)',
+36 silly install resolved     version: '0.5.0',
+36 silly install resolved     keywords: [ 'sass', 'template', 'css', 'view' ],
+36 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+36 silly install resolved     contributors: [ [Object] ],
+36 silly install resolved     main: './lib/sass',
+36 silly install resolved     _id: 'sass@0.5.0',
+36 silly install resolved     engines: { node: '*' },
+36 silly install resolved     _nodeSupported: true,
+36 silly install resolved     _npmVersion: '0.2.7-2',
+36 silly install resolved     _nodeVersion: 'v0.3.1-pre',
+36 silly install resolved     dist:
+36 silly install resolved      { tarball: 'http://registry.npmjs.org/sass/-/sass-0.5.0.tgz',
+36 silly install resolved        shasum: '9dee1183a0f400361f2c5d3453bf2e54705e03f9' },
+36 silly install resolved     directories: {},
+36 silly install resolved     _shasum: '9dee1183a0f400361f2c5d3453bf2e54705e03f9',
+36 silly install resolved     _resolved: 'https://registry.npmjs.org/sass/-/sass-0.5.0.tgz',
+36 silly install resolved     _from: 'sass@*',
+36 silly install resolved     readme: 'ERROR: No README data found!' } ]
+37 info install sass@0.5.0 into /Users/katrinaliao/Desktop/valueleague
+38 info installOne sass@0.5.0
+39 verbose installOne of sass to /Users/katrinaliao/Desktop/valueleague not in flight; installing
+40 warn locking Error: EACCES, open '/Users/katrinaliao/.npm/_locks/sass-2b734b248bfc2bdb.lock'
+40 warn locking  /Users/katrinaliao/.npm/_locks/sass-2b734b248bfc2bdb.lock failed { [Error: EACCES, open '/Users/katrinaliao/.npm/_locks/sass-2b734b248bfc2bdb.lock']
+40 warn locking   errno: 3,
+40 warn locking   code: 'EACCES',
+40 warn locking   path: '/Users/katrinaliao/.npm/_locks/sass-2b734b248bfc2bdb.lock' }
+41 verbose stack Error: Attempt to unlock /Users/katrinaliao/Desktop/valueleague/node_modules/sass, which hasn't been locked
+41 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+41 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:929:5)
+41 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:933:20
+41 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+41 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+41 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+41 verbose stack     at Object.oncomplete (fs.js:108:15)
+42 verbose cwd /Users/katrinaliao/Desktop/valueleague
+43 error Darwin 14.1.0
+44 error argv "node" "/usr/local/bin/npm" "install" "sass"
+45 error node v0.10.36
+46 error npm  v2.3.0
+47 error Attempt to unlock /Users/katrinaliao/Desktop/valueleague/node_modules/sass, which hasn't been locked
+48 error If you need help, you may report this error at:
+48 error     <http://github.com/npm/npm/issues>
+49 verbose exit [ 1, true ]
