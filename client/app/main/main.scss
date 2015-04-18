@@ -83,6 +83,7 @@ background: #2A303D;
     margin-top: 36px;
     font-size: 6em;
 }
+
 .first{
     text-align: center;
     color: #2A303D;
@@ -103,6 +104,7 @@ background: #2A303D;
     background: #2A303D;
     padding: 50px;
     clear: both;
+    text-align: left;
     h1 { color: #00ffbc; }
     h3{
     color: #e8e8e8;
@@ -115,19 +117,23 @@ background: #2A303D;
     background: #323948;
 }
 
-.green { color: #00ffbc; }
-
-game-thumbnail{
-    padding: 40px;
-    margin: 40px;
+.green { 
+    color: #00ffbc; 
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 39px;
+    padding: 20px;
 }
 
-.header{
-  font-family: 'Oswald', sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.5em;
-  margin: 0;
-  padding: 40px 0;
-  text-align: center;
-  text-transform: uppercase;
-}
+
+// .header{
+//   font-family: 'Oswald', sans-serif;
+//   font-size: 24px;
+//   letter-spacing: 0.5em;
+//   margin: 0;
+//   padding: 40px 0;
+//   text-align: center;
+//   text-transform: uppercase;
+// }
