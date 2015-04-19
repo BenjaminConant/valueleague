@@ -1,6 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
 	<h2 class="green">Your current balance is {{user.balance}} ...</h2>
-	<button class="btn btn-default btn-lg btn-success"> Cash Out </button>
+	<h2 class="green">{{currentBalance}}</h2>
+	<div class="text-center">
+		<button class="btn btn-default btn-lg btn-success" ng-click="cashOut()"> Cash Out </button>
+	</div>
 </div>
 
