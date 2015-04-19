@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('valueleagueApp')
-  .controller('GameCtrl', function ($scope, $stateParams, game, $interval) {
+  .controller('GameCtrl', function ($scope, $stateParams, game, $interval, $modal) {
   	$scope.counter = 0; 
 
   
@@ -35,6 +35,22 @@ angular.module('valueleagueApp')
 
 
    	}
+
+
+    $scope.openStockModal = function(g){
+      $scope.select = g;
+          $modal.open({
+            templateUrl: "app/gameStockThumbnail/modal.html",
+            scope: $scope,
+            controller: "ChooseStockCtrl"
+          })
+        };
+
+
+    // $scope.selected = function(stock){
+    //   $scope.selectedStock = stock.ticker;
+    //   console.log($scope.hasSelected)
+    // };
 
    
 

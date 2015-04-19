@@ -1,9 +1,16 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 	
 	<div class="col-md-12">
+
 		<h1 class="green"> {{game.date}} </h1>
+		<div class="selected-stock-wrapper" ng-if="selectedStock">
+			Your Selection: {{selectedStock}}
+		</div>
 		<div class="row demoDiv"> <button ng-click="runDemo()" ng-show="game.name === 'demoGame'" class="btn demo btn-lg btn-success">Start Demo</button> </div>
 		<div class="container">
 			<game-stock-thumbnail ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=true"></game-stock-thumbnail>
 		</div>
+
 </div>
+
+
