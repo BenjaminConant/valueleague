@@ -29,7 +29,9 @@ angular.module('valueleagueApp')
             console.log(stock);
           });
 
-    
+      if ($scope.counter === $scope.game.stocks[0].prices.length - 1 ) {
+        $scope.gameOver = true;
+      }
 
 	  	}, 1000, $scope.game.stocks[0].prices.length - 1);
 

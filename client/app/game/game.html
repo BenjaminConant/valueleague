@@ -2,7 +2,13 @@
 	
 <div class="col-md-12">
 	<h1> {{game.date}} </h1>
-	<h1><button ng-click="runDemo()" ng-show="game.name === 'demoGame'" class="btn btn-success">Start Demo</button></h1>
-	<h1><button ng-click="" ng-show="game.name === 'demoGame'" class="btn btn-success">Leaderboard</button></h1>
-	<game-stock-thumbnail ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=true"></game-stock-thumbnail>
+	<h1>
+		<button ng-click="runDemo()" ng-show="game.name === 'demoGame'" class="btn btn-success">Start Demo</button>
+		<div>
+		<span style="color:white" ng-show="gameOver">Game Complete -> Winner Ben Conant -> MYL Mylan N.V. with 4.56% increase in value </span>
+		</div>
+	</h1>
+<!-- 	<h1><button ng-click="" ng-show="game.name === 'demoGame'" class="btn btn-success">Leaderboard</button></h1> -->
+	<game-stock-thumbnail ng-show="counter === 0" ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=false"></game-stock-thumbnail>
+	<game-stock-thumbnail ng-show="counter !== 0 " ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=true"></game-stock-thumbnail>
 </div>
