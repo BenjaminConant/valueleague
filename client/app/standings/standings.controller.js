@@ -14,10 +14,10 @@ angular.module('valueleagueApp')
     },
     {
     	standing: "1",
-    	name:"Steve",
-    	stockSym:"YUM",
-    	stockName:"Yum Brands Inc",
-    	Change:"0.67%",
+    	name:"Ben",
+    	stockSym:"MYL",
+    	stockName:"Mylan N.V.",
+    	Change:"4.56%",
     	score: "500"
     },
     {
@@ -30,7 +30,7 @@ angular.module('valueleagueApp')
     },
     {
     	standing: "3",
-    	name:"Ben",
+    	name:"Steve",
     	stockSym:"ZMH",
     	stockName:"Zimmer Holdings Inc",
     	Change:"-0.72%",
@@ -45,7 +45,7 @@ angular.module('valueleagueApp')
     	score: "300"
     },
     {
-    	standing: "500",
+    	standing: "5",
     	name:"Evan",
     	stockSym:"XYL",
     	stockName:"Xylem Inc",
