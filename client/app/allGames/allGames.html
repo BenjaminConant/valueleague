@@ -1,9 +1,10 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-<div class="col-md-12">
+<div class="container" ng-include="'components/navbar/navbar.html'"></div>
 
-	<h1 class="green"> Demo Game </h1>
-	<game-thumbnail ng-repeat="game in demoGame"></game-thumbnail>
-
-	<h1 class="green"> Upcoming Games</h1>
-	<game-thumbnail ng-repeat="game in games" ></game-thumbnail>
-</div>
+<h1 class="row green"> Demo Game </h1>
+	<div class="col-md-12">
+		<game-thumbnail ng-repeat="game in demoGame"></game-thumbnail>
+	</div>
+<h1 class="green"> Upcoming Games</h1>
+	<div class="col-md-12">
+		<game-thumbnail ng-repeat="game in games" ></game-thumbnail>
+	</div>
