@@ -23,7 +23,7 @@
       <link rel="stylesheet" href="app/font-awesome.css">
       <!-- endinjector -->
     <!-- endbuild -->
-    <link rel="stylesheet" href="assets/semantic.min.css">
+
 
   </head>
   <body ng-app="valueleagueApp">
@@ -45,6 +45,8 @@
       ga('send', 'pageview');
     </script>
 
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -53,23 +55,25 @@
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/wow/dist/wow.min.js"></script>
-      <script>
-       new WOW().init();
-      </script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
-      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="https://www.simplify.com/commerce/v1/simplify.js"></script>
+      <script src="bower_components/wow/dist/wow.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
+
+          <script src="bower_components/wow/dist/wow.min.js"></script>
+             <script>      
+             new WOW().init();
+            </script>
+
+        
+        <script src="https://www.simplify.com/commerce/v1/simplify.js"></script>
 
         <!-- build:js({.tmp,client}) app/app.js -->
           <script src="app/app.js"></script>
