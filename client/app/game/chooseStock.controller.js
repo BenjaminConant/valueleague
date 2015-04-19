@@ -2,9 +2,7 @@
 'use strict';
 
 angular.module('valueleagueApp')
-  .controller('ChooseStockCtrl', function ($http, $scope, $stateParams, game, $interval, $modal, $modalInstance) {
-
-  	$scope.hasSelected = false;
+  .controller('ChooseStockCtrl', function ($http, $rootScope, $scope, $stateParams, game, $interval, $modal, $modalInstance) {
   	$scope.selectedStock = null
 
     $scope.openStockModal = function(g){
@@ -19,12 +17,12 @@ angular.module('valueleagueApp')
 
     $scope.selected = function(stock){
       stock.isSelected = true
+      $rootScope.hasSelected = true
+      $rootScope.selectedStock = stock.ticker
       console.log("In the closing function")
-      setTimeout(function(){
-     	 $modalInstance.close();
-      }, 4500)
-      $scope.hasSelected = true
-      console.log($scope.hasSelected)
+      
+      $modalInstance.close();
+      console.log($rootScope.hasSelected)
 
     };
    

@@ -59,7 +59,6 @@ $(document).ready(function(){
 
 
             	<h1>Pay for Selection {{select.ticker}}</h1>
-            	<form id="simplify-payment-form" action="/api/mastercards/token" method="POST">
             	    <!-- The $10 amount is set on the server side -->
             	    <div>
             	        <label>Credit Card Number: </label>
@@ -70,6 +69,8 @@ $(document).ready(function(){
             	        <input id="cc-cvc" type="text" maxlength="4" autocomplete="off" value=""/>
             	    </div>
             	    <div>
+                    {{hasSelected}}
+
             	        <label>Expiry Date: </label>
             	        <select id="cc-exp-month">
             	            <option value="01">Jan</option>
@@ -98,8 +99,8 @@ $(document).ready(function(){
             	            <option value="22">2022</option>
             	        </select>
             	    </div>
+                    <img src="assets/images/mastercard-logo.png" style="width:25%; height:25%;"/><br>
             	    <button id="process-payment-btn" type="submit" ng-click="selected(select)">Submit</button>
 
             </div>
-            </form>
 

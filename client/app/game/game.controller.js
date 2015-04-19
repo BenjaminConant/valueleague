@@ -47,12 +47,10 @@ angular.module('valueleagueApp')
         };
 
 
-      $scope.hasSelected = false;
-    $scope.selected = function(stock){
-      $scope.hasSelected = true;
-      $scope.selectedStock = stock.ticker;
-      console.log($scope.hasSelected)
-    };
+    // $scope.selected = function(stock){
+    //   $scope.selectedStock = stock.ticker;
+    //   console.log($scope.hasSelected)
+    // };
 
    
 
