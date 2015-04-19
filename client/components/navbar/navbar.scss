@@ -1,3 +1,7 @@
+.navbar{
+	background-color: #1f1f1f;
+	padding: 10px;
+}
 
 .brandname {
 	padding: 0 0 0 50px;
@@ -5,19 +9,23 @@
 	margin: -27px 50px 0 0;
 	font-size: 5px;
 	a{
-		margin-left: 15px;
+		margin: 15px;
 		color: #00ffbc;
 		font-size: 30px;
 	}
 }
 #navbar-main {
+	background-color: #1f1f1f;
 	li a{
 		margin-left: 30px;
 		font-size: 1.5em;
 		color: #F5F5F5;
 	}
+	li a:hover{
+		color: #00ffbc;
+	}
 	.active a{
-		background-color: #2A303D;
+		background-color: ##1f1f1f;
 		color: #00ffbc;
 	}
 }
