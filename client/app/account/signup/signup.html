@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row signupDiv">
     <div class="col-sm-12">
-      <h1 class="signup">Sign up</h1>
+      <h1 class="signup green">Sign up</h1>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
@@ -53,30 +53,34 @@
             {{ errors.password }}
           </p>
         </div>
-
-        <div>
-          <button class="btn btn-lg btn-success" type="submit">
+      
+          <button class="btn signupBtn btn-lg btn-success" type="submit">
             Sign up
           </button>
-          <a class="btn btn-lg btn-success" href="/login">
+         <!--  <button class="btn btn-lg btn-success" href="/login">
             Login
-          </a>
-        </div>
+          </button> -->
 
         <hr>
         <div class="media">
+          <div class="col-md-4">
           <a class="btnMedia btn btn-facebook" href="" ng-click="loginOauth('facebook')">
             <i class="fa fa-facebook"></i> Connect with Facebook
           </a>
+        </div>
+        <div class="col-md-4">
           <a class="btnMedia btn btn-google-plus" href="" ng-click="loginOauth('google')">
             <i class="fa fa-google-plus"></i> Connect with Google+
           </a>
+        </div>
+        <div class="col-md-4">
           <a class="btnMedia btn btn-twitter" href="" ng-click="loginOauth('twitter')">
             <i class="fa fa-twitter"></i> Connect with Twitter
           </a>
         </div>
+        </div>
       </form>
     </div>
   </div>
-  <hr>
+  
 </div>
