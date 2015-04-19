@@ -55,24 +55,24 @@ $(document).ready(function(){
             });
         });
     </script>
-
-
-
-            	<h1>Pay for Selection {{select.ticker}}</h1>
-            	    <!-- The $10 amount is set on the server side -->
-            	    <div>
+                
+                <div class="paymentform">
+                    <h1 class="payfor">Pay for: {{select.name}}</h1>
+                    
+            	    <div class="cardNumber">
+                            <!-- The $10 amount is set on the server side -->
             	        <label>Credit Card Number: </label>
-            	        <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus />
+            	        <input class="form-control" id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus />
             	    </div>
-            	    <div>
+            	    <div class="cvc">
             	        <label>CVC: </label>
-            	        <input id="cc-cvc" type="text" maxlength="4" autocomplete="off" value=""/>
+            	        <input class="form-control" id="cc-cvc" type="text" maxlength="4" autocomplete="off" value=""/>
             	    </div>
-            	    <div>
+            	    <div class="exp">
                     {{hasSelected}}
 
             	        <label>Expiry Date: </label>
-            	        <select id="cc-exp-month">
+            	        <select class="form-control" id="cc-exp-month">
             	            <option value="01">Jan</option>
             	            <option value="02">Feb</option>
             	            <option value="03">Mar</option>
@@ -86,7 +86,7 @@ $(document).ready(function(){
             	            <option value="11">Nov</option>
             	            <option value="12">Dec</option>
             	        </select>
-            	        <select id="cc-exp-year">
+            	        <select class="form-control" id="cc-exp-year">
             	            <option value="13">2013</option>
             	            <option value="14">2014</option>
             	            <option value="15">2015</option>
@@ -100,7 +100,7 @@ $(document).ready(function(){
             	        </select>
             	    </div>
                     <img src="assets/images/mastercard-logo.png" style="width:25%; height:25%;"/><br>
-            	    <button id="process-payment-btn" type="submit" ng-click="selected(select)">Submit</button>
+            	    <button class="form-control" id="process-payment-btn" type="submit" ng-click="selected(select)">Submit</button>
 
             </div>
-
+            </div>
