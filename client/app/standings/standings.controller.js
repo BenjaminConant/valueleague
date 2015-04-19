@@ -45,7 +45,7 @@ angular.module('valueleagueApp')
     	score: "300"
     },
     {
-    	standing: "500",
+    	standing: "5",
     	name:"Evan",
     	stockSym:"XYL",
     	stockName:"Xylem Inc",
