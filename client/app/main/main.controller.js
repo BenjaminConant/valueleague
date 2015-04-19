@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('valueleagueApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, $rootScope) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -24,4 +24,6 @@ angular.module('valueleagueApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $rootScope.currentBalance = '$6.00';
   });

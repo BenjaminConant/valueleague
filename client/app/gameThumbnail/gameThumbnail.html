@@ -1,16 +1,24 @@
 <!-- ng class add here -->
 
+
+
 <div class="row game-thumbnail-container" ng-class="" ng-click="goToGame(game._id)">
 	<div class=" col-sm-3 col-md-3 col-lg-3 ">
-		<h2>{{game.date}} The date of the game</h2>
+		<h2>{{game.date}}</h2>
 	</div>
 	<div class=" col-sm-3 col-md-3 col-lg-3 ">
-		<h2>{{game.players.length}} the # players</h2>
+		<!-- <h2>{{game.players.length}}</h2> -->
+		<h2 ng-show="game.name === 'demoGame'">5</h2>
+		<h2 ng-show="game.name !== 'demoGame'">0</h2>
 	</div>
 	<div class=" col-sm-3 col-md-3 col-lg-3 ">
-		<h2>{{game.players.length}} the $$ you win</h2>
+		<!-- <h2>{{game.players.length}}</h2> -->
+		<h2 ng-show="game.name === 'demoGame'">$ 5.00</h2>
+		<h2 ng-show="game.name !== 'demoGame'">$ 0.00</h2>
 	</div>
 	<div class=" col-sm-3 col-md-3 col-lg-3 btnDiv">
-		<button class="btn btn-lg pull-right">Join Game Button</button>
+
+		<button class="btn btn-lg pull-right" ng-click="goToGame(game._id)" >Join Game Button</button>
+
 	</div>
 </div>
