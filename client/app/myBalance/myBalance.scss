@@ -1,5 +1,20 @@
-button {
-	margin-top: 8%;
+.btnBalance {
+	margin: 0 auto;
 	background-color: #323948;
 	color: #00ffbc;
+	top: 50%;
+	position: relative;
+	transform: translateY(40%);
+	// vertical-align: middle;
 }
+
+.balance h1{
+	color: #e8e8e8;
+	text-align: center;
+}
+
+// .balance{
+// 	margin: 0 auto;
+// 	width: 90%;
+// 	padding: 10px;
+// }
