@@ -2,7 +2,10 @@
 
 var _ = require('lodash');
 var Game = require('./game.model');
-var Stock = require('../stock/stock.model')
+var Stock = require('../stock/stock.model');
+var Promise = require('bluebird');
+var request = Promise.promisify(require('request'));
+var stocks = require('../../config/stocks.js');
 
 // Get list of games
 exports.index = function(req, res) {
@@ -12,14 +15,29 @@ exports.index = function(req, res) {
   });
 };
 
+var api_token = '6E10075F14A6447E94C8700F8CF7116A';
+
+var RequestObj = function (token,tickers) {
+    this.host ='http://superquotes.xignite.com',
+    this.type ='/xSuperQuotes.json/GetQuotes?',
+    this.token = '_token=' + token,
+    this.identifier = '&IdentifierType=Symbol',
+    this.ticker = '&Identifiers=' + tickers,
+    this.fields = '&_Fields=Last,Identifier,Name'
+}
+RequestObj.prototype.combine = function () {
+    var req = ''
+    for (var k in this) { if (k != 'combine') req += this[k]; }
+    return req
+}
+
 // Get a single game
 exports.show = function(req, res) {
   Game.findById(req.params.id)
   .populate('stocks')
   .exec(function(err, game){
     if (game) {
-
-      console.log(game);
+      console.log('the game is: ',game);
       if (game.name === "demoGame") {
         if (game.stocks.length > 0) {
           console.log("we got to inside the wrong thing");
@@ -38,10 +56,28 @@ exports.show = function(req, res) {
           })
         }
       } else {
-        //
-        res.json(200, game)
+        // make the api request
+        var tickers = stocks;
+        var reqObj = new RequestObj(api_token, tickers);
+        console.log(reqObj.combine());
+        request(reqObj.combine()).then(function(stockData){
+          // check promise object...
+          var stockBody = JSON.parse(stockData[stockData.length - 1]);
+          //console.log(stockBody)
+          // game.stocks = stockBody;
+          // console.log(game);
+          var newGame = {
+            name: game.name,
+            info: game.info,
+            active: game.active,
+            date: game.date,
+            stocks: stockBody,
+            winner: game.winner,
+            complete: game.complete
+          };
+          res.json(200, newGame)   
+        });
       }
-
     } else {
       res.json(200, "no game");
     }

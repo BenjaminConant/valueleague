@@ -1,7 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 	
-	<div class="col-md-12">
-		<h1> {{game.date}} </h1>
-		<h1><button ng-click="runDemo()" ng-show="game.name === 'demoGame'" class="btn btn-success">Start Demo</button></h1>
-		<game-stock-thumbnail ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=true"></game-stock-thumbnail>
+<div class="col-md-12">
+	<h1> {{game.date}} </h1>
+	<h1><button ng-click="runDemo()" ng-show="game.name === 'demoGame'" class="btn btn-success">Start Demo</button></h1>
+	<h1><button ng-click="" ng-show="game.name === 'demoGame'" class="btn btn-success">Leaderboard</button></h1>
+	<game-stock-thumbnail ng-repeat="stock in game.stocks | orderBy : 'percentReturn': reverse=true"></game-stock-thumbnail>
 </div>

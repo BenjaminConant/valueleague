@@ -1,4 +1,8 @@
-<div class="row game-stock-thumbnail-container">
+<div ng-show="game.name == 'demoGame'" class="row game-stock-thumbnail-container">
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		<span ng-show="counter > 0">{{$index + 1}}</span> 
+		<span ng-show="counter == 0">-</span>
+	</div>
 	<div class=" col-sm-2 col-md-2 col-lg-2 ">
 		{{stock.ticker}} 
 	</div>
@@ -9,7 +13,30 @@
 		{{stock.prices[counter].Open | currency}} 
 	</div>
 	<div class=" col-sm-2 col-md-2 col-lg-2 ">
-		{{stock.percentReturn | percentFilter:2}} 
+		<span ng-show="counter > 0">{{stock.percentReturn | percentFilter:2}}</span>
+		<span ng-show="counter == 0">-</span> 
+	</div>
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		<button class="btn btn-success pull-right"> Choose Stock </button>
+	</div>
+</div>
+<div ng-show="game.name != 'demoGame'" class="row game-stock-thumbnail-container">
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		<span ng-show="counter > 0">{{$index + 1}}</span> 
+		<span ng-show="counter == 0">-</span>
+	</div>	
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		{{stock.Identifier}} 
+	</div>
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		{{stock.Name}}
+	</div>
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		{{stock.Last | currency}} 
+	</div>
+	<div class=" col-sm-2 col-md-2 col-lg-2 ">
+		<span ng-show="counter > 0">{{stock.percentReturn | percentFilter:2}}</span>
+		<span ng-show="counter == 0">-</span> 
 	</div>
 	<div class=" col-sm-2 col-md-2 col-lg-2 ">
 		<button class="btn btn-success pull-right"> Choose Stock </button>
