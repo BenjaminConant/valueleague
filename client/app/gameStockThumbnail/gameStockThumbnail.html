@@ -1,4 +1,4 @@
-<div class="row game-stock-thumbnail-container">
+<div class="row game-stock-thumbnail-container" ng-class="{selectedStock: stock.isSelected}">
 	<div class=" col-sm-2 col-md-2 col-lg-2 ">
 		{{stock.ticker}} 
 	</div>
@@ -12,6 +12,7 @@
 		{{stock.percentReturn | percentFilter:2}} 
 	</div>
 	<div class=" col-sm-2 col-md-2 col-lg-2 ">
-		<button class="btn btn-success pull-right"> Choose Stock </button>
+		<button class="btn btn-success pull-right" ng-hide="hasSelected" ng-click="openStockModal(stock)"> Choose Stock </button>
 	</div>
 </div>
+

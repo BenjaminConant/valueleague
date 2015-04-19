@@ -5,7 +5,6 @@ var controller = require('./mastercard.controller');
 var PaymentsApi = require('simplify-commerce')
 var router = express.Router();
 router.post('/token', function (req, res){
-	console.log(req.body, "Yo2")
 	var Simplify = require("simplify-commerce"),
 	    client = Simplify.getClient({
 	        publicKey: 'sbpb_ZmUyZWNmNWQtMGY2Ni00Yjg3LTg1MTEtMWE5YjAzYmEyMzdl',
@@ -23,10 +22,10 @@ router.post('/token', function (req, res){
 	    if(errData){
 	        console.error("Error Message: " + errData.data.error.message);
 	        // handle the error
-	        return;
 	    }
 	
 	    console.log("Payment Status: " + data.paymentStatus);
+	    res.status(200)
 	});
 })
 router.get('/', controller.index);
