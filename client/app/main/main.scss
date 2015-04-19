@@ -127,6 +127,17 @@ background: #2A303D;
     padding: 20px;
 }
 
+button{
+    background-color: #323948;
+    color: #00ffbc;
+    border-color: #00ffbc;
+}
+
+.btn-success:hover{
+    color: white;
+    background-color: #323948;
+    border-color: white;
+}
 
 // .header{
 //   font-family: 'Oswald', sans-serif;
