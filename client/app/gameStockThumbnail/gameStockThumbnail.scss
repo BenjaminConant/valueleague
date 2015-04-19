@@ -1,8 +1,29 @@
 .game-stock-thumbnail-container{
-	border: 1px solid black;
-	width: 70%;
+	border-bottom: 1px solid #e8e8e8;
+	width: 90% !important;
 	margin: 0 auto;
 	margin-bottom: 5px;
-	color: white;
 	padding: 5px !important;
+}
+
+.stockTable{
+    padding: 20px;
+    text-align: center;
+    h3{
+    color: #e8e8e8;
+    }
+}
+
+.delta{
+	color: #00ffbc !important;
+}
+
+.chooseStock {
+	background-color: #323948;
+	color: #00ffbc;
+}
+
+.selectedStock{ 
+	// hopefully this works!
+	background-color: #3d4557;
 }

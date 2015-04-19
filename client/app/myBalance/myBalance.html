@@ -1,9 +1,15 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
-	<h2 class="green">Your current balance is {{user.balance}} ...</h2>
-	<h2 class="green">{{currentBalance}}</h2>
-	<div class="text-center">
-		<button class="btn btn-default btn-lg btn-success" ng-click="cashOut()"> Cash Out </button>
+	<h2 class="green">Your current balance{{user.balance}}</h2>
+	<div class="row balance">
+		<div class='col-lg-4'></div>
+		<div class='col-lg-2'>
+			<h1>{{currentBalance}}</h1>
+		</div>
+		<div class='col-lg-2'>
+			<button class="btn btnBalance btn-lg btn-success" ng-click="cashOut()"> Cash Out </button>
+		</div>
+		<div class='col-lg-4'></div>
 	</div>
 </div>
 
